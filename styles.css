@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #282c36;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+  .editor-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 2px solid #fff;
+    overflow: hidden;
+    background-image: url("frame_1.png"); /* Replace with your image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .editor-container img {
+    transition: transform 0.3s ease; /* Smooth zoom and rotate transition */
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .controls label,
+  .controls button {
+    background: #444;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .controls input[type="range"] {
+    width: 100px;
+  }
+
+  #upload {
+    opacity: 0;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .upload-button {
+    position: absolute;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  .upload-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .upload-icon {
+    width: 24px;
+    height: 24px;
+  }
