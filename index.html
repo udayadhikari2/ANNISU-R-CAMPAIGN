@@ -8,6 +8,7 @@
   </head>
 
   <body>
+  
     <div class="header">
         <div class="title">
             <img src="/images/akhil.png" height="30" alt="" srcset="" />
@@ -18,16 +19,30 @@
     <div class="editor-container" id="editor-container">
       <canvas id="canvas"></canvas>
     </div>
-    <label for="upload" class="upload-button">
-      <img
-        class="upload-icon"
-        src="/images/upload-icon.png"
-        alt="Upload Icon"
-      />
-
-      <h6>Upload Image</h6>
-    </label>
-    <input type="file" id="upload" accept="image/*" />
+    <div class="toggle-option">
+        <div style="display: flex; align-items: center; gap: 5px;">
+            <label for="upload" class="upload-button">
+              <img
+                class="upload-icon"
+                src="/images/upload-icon.png"
+                alt="Upload Icon"
+              />
+              <h6>Upload Image</h6>
+            </label>
+            <input type="file" id="upload" accept="image/*" />
+        </div>
+        <div id="download" class="download-button">
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <img
+                    class="download-icon"
+                    src="/images/download.png"
+                    alt="Download Icon"
+                  />
+                <h6>Download Image</h6>
+            </div>
+        </div>
+    </div>
+   
     <div class="controls">
       <label
         >Zoom:
@@ -38,7 +53,24 @@
         <input type="range" id="rotate" min="-180" max="180" step="1" value="0"
       /></label>
     </div>
-    <button id="download">Download</button>
+    
+</div>
+    <!-- footer -->
+    <div class="page-wrapper">
+        <div id="waterdrop"></div>
+        <footer>
+        <div class="footer-top">
+            <p>&copy; 2025 Web Vision Nepal</p>
+            <p>Developed by:  Uday Adhikari, Aashish Rana Magar, Kushal Pandit</p>
+        </div>
+    </footer>
+    </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      <script src="https://daniellaharel.com/raindrops/js/raindrops.js"></script>
+    
+     <script> jQuery('#waterdrop').raindrops({color:'#1c1f2f', canvasHeight:150, density: 0.1, frequency: 20});
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

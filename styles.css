@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-  margin-top: 5rem;
+  margin-top: 2rem;
   display: flex;
   width: 60%;
   flex-direction: column;
@@ -50,7 +50,8 @@ body {
   flex-direction: column;
   gap: 10px;
   justify-content: space-evenly;
-  margin-top: 20px;
+  margin-top: 10px;
+  width: 300px;
 }
 
 .controls label,
@@ -60,6 +61,8 @@ body {
   border-radius: 5px;
   cursor: pointer;
   flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .controls input[type="range"] {
@@ -76,18 +79,15 @@ body {
 }
 
 .upload-button {
-  /* position: absolute; */
   margin-top: 10px;
   z-index: 10;
   background: rgba(189, 7, 7, 0.5);
   color: white;
   border: 5px solid white;
-  padding: 5px;
+  padding: 15px;
   border-radius: 5px;
   cursor: pointer;
   display: flex;
-  gap: 10px;
-  /* flex-direction: column; */
   align-items: center;
   border: none;
   font-size: 16px;
@@ -97,18 +97,85 @@ body {
 .upload-button:hover {
   background: rgba(11, 204, 27, 0.7);
 }
-
-.upload-icon {
-  width: 24px;
-  height: 24px;
-}
-
-#download {
-  margin: 1rem;
-  background: green;
-  border: none;
-  padding: 0.5rem 2rem;
+.download-button {
+  display: none;
+  margin-top: 10px;
+  z-index: 10;
+  background: rgba(255, 12, 12, 0.5);
   color: white;
+  border: 5px solid white;
+  padding: 15px;
   border-radius: 5px;
   cursor: pointer;
+  align-items: center;
+  border: none;
+  font-size: 16px;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background: rgba(255, 1, 1, 0.7);
+}
+
+.upload-icon {
+  width: 30px;
+  height: 30px;
+}
+.download-icon{
+  width: 30px;
+  height: 30px;
+}
+.toggle-option{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+ 
+}
+/* #download {
+  display: block;
+  margin: 1rem;
+  background: green;
+  
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+
+/* footer */
+.page-wrapper
+{
+    bottom: 0;
+    width: 100%;
+    z-index: 11111;
+    top: 35px;
+}
+.footer-top {
+    background: #2e2b2b;
+    background-size: cover;
+    background-position: center;
+    padding: 0 0 20px;
+    font-family: rubik;
+    padding-top:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    gap: 10px;
+  
+}
+#waterdrop {
+    height: 30px;
+}
+
+#waterdrop canvas {
+    bottom: -70px !important;
+}
+
+.footer-top p {
+    margin: 0;
 }

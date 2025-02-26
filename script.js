@@ -55,7 +55,8 @@ img.onload = () => {
 //   uploadButton.style.left = "10px"; // Keep at top-left
 //   uploadButton.style.transform = "none";
   uploadButton.style.background = "rgba(11, 204, 27, 0.7)";
-//   uploadButton.querySelector("h6").style.display = "none";
+  uploadButton.querySelector("h6").innerHTML = "Change Image";
+  download.style.display="block";
   imgX = 0;
   imgY = 0;
   zoom.value = 1;
