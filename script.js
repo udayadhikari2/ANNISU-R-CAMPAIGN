@@ -15,11 +15,15 @@ const upload = document.getElementById("upload");
     imgX = 0,
     imgY = 0;
   let imageLoaded = false;
-  frame.src = "frame_1.png";
+  ctx.imageSmoothingEnabled = false;
+  frame.src = "frame_2.png";
 
-  canvas.width = 500;
-  canvas.height = 500;
-  frame.onload = () => drawImage();
+  frame.onload = () => {
+    canvas.width = frame.width; // Use natural dimensions
+    canvas.height = frame.height;
+    frameLoaded = true;
+    drawImage();
+  };
 
   upload.addEventListener("change", (event) => {
     const file = event.target.files[0];
@@ -35,10 +39,10 @@ const upload = document.getElementById("upload");
   img.onload = () => {
     imageLoaded = true;
     document.body.style.backgroundImage = "none";
-    uploadButton.style.top = "10px";
+    uploadButton.style.top = "100px";
     uploadButton.style.left = "10px"; // Keep at top-left
     uploadButton.style.transform = "none";
-    uploadButton.querySelector("h6").style.display = "none";
+    uploadButton.querySelector("h6").innerHTML = "Replace";
     imgX = 0;
     imgY = 0;
     zoom.value = 1;
@@ -118,7 +122,7 @@ const upload = document.getElementById("upload");
       alert("Please upload an image before downloading!");
       return;
     }
-    const dataUrl = mergedCanvas.toDataURL("image/jpeg", 1.0);
+    const dataUrl = canvas.toDataURL("image/jpeg", 1.0);
     const link = document.createElement("a");
     link.href = dataUrl;
     link.download = "edited-image.jpeg";
