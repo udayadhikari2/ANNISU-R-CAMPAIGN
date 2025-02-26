@@ -26,6 +26,9 @@ body {
 .title{
     display: flex;
     gap: 10px;
+  
+    width: 100%;
+    justify-content: center;
 }
 
 .editor-container {
@@ -133,14 +136,7 @@ body {
   gap: 30px;
  
 }
-/* #download {
-  display: block;
-  margin: 1rem;
-  background: green;
-  
-  border-radius: 5px;
-  cursor: pointer;
-} */
+
 
 
 /* footer */
@@ -148,6 +144,7 @@ body {
 {
     bottom: 0;
     width: 100%;
+    /* border: 2px solid red;; */
     z-index: 11111;
     top: 35px;
 }
@@ -160,7 +157,7 @@ body {
     padding-top:20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #222;
     color: #fff;
