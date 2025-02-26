@@ -137,7 +137,7 @@ download.addEventListener("click", () => {
   const dataUrl = canvas.toDataURL("image/jpeg", 1.0);
   const link = document.createElement("a");
   link.href = dataUrl;
-  link.download = "edited-image.jpeg";
+  link.download = "ANNISU-R-FRAME.jpeg";
   link.click();
 });
 
