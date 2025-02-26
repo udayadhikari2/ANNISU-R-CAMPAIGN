@@ -45,7 +45,7 @@ body {
 
 .controls {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
   justify-content: space-evenly;
   margin-top: 20px;
@@ -74,13 +74,14 @@ body {
 }
 
 .upload-button {
-  position: absolute;
+  /* position: absolute; */
+  margin-top: 10px;
   z-index: 10;
   background: rgba(189, 7, 7, 0.5);
   color: white;
   border: 5px solid white;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   display: flex;
   gap: 10px;
@@ -101,7 +102,7 @@ body {
 }
 
 #download {
-  margin-top: 1rem;
+  margin: 1rem;
   background: green;
   border: none;
   padding: 0.5rem 2rem;

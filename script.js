@@ -22,7 +22,7 @@ let offsetX = 0,
   imgY = 0;
 let imageLoaded = false;
 ctx.imageSmoothingEnabled = false;
-frame.src = "/images/frame.png";
+frame.src = "/images/frame_1.png";
 
 const handleScreenSize = () => {
   editorContainer.style.width = `${editorContainerSize}px`;
@@ -51,11 +51,11 @@ upload.addEventListener("change", (event) => {
 
 img.onload = () => {
   imageLoaded = true;
-  uploadButton.style.top = "100px";
-  uploadButton.style.left = "10px"; // Keep at top-left
-  uploadButton.style.transform = "none";
+//   uploadButton.style.top = "100px";
+//   uploadButton.style.left = "10px"; // Keep at top-left
+//   uploadButton.style.transform = "none";
   uploadButton.style.background = "rgba(11, 204, 27, 0.7)";
-  uploadButton.querySelector("h6").style.display = "none";
+//   uploadButton.querySelector("h6").style.display = "none";
   imgX = 0;
   imgY = 0;
   zoom.value = 1;
@@ -143,12 +143,10 @@ download.addEventListener("click", () => {
 const handleResize = () => {
   const x = window.matchMedia("(max-width: 500px)");
   if (x.matches) {
-    editorContainerSize = 200;
-    canvasSize = 1000;
+    editorContainerSize = 400;
     handleScreenSize();
   } else {
     editorContainerSize = defaultEditorContainerSize;
-    canvasSize = defaultCanvasSize;
     handleScreenSize();
   }
 };
