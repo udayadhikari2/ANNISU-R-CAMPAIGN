@@ -8,11 +8,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    270deg,
-    hsla(46, 95%, 56%, 1) 0%,
-    hsla(350, 97%, 65%, 1) 100%
-  );
+  background: linear-gradient(90deg, rgba(189,0,7,1) 0%, rgba(253,183,29,1) 50%, rgba(158,0,0,1) 100%);
   color: white;
   font-family: Arial, sans-serif;
 }
@@ -20,10 +16,16 @@ body {
 .header {
   margin-top: 5rem;
   display: flex;
+  width: 50%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   margin-bottom: 20px;
+}
+.title{
+    display: flex;
+    gap: 10px;
 }
 
 .editor-container {
