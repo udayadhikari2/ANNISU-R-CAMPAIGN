@@ -7,7 +7,11 @@ const download = document.getElementById("download");
 const editorContainer = document.getElementById("editor-container");
 const uploadButton = document.querySelector(".upload-button");
 
-const canvasSize = 2000;
+const defaultEditorContainerSize = 500;
+const defaultCanvasSize = 2000;
+
+let editorContainerSize = defaultEditorContainerSize;
+let canvasSize = defaultCanvasSize;
 
 let img = new Image();
 let frame = new Image();
@@ -18,13 +22,20 @@ let offsetX = 0,
   imgY = 0;
 let imageLoaded = false;
 ctx.imageSmoothingEnabled = false;
-frame.src = "/images/frame_2.png";
+frame.src = "/images/frame.png";
 
-frame.onload = () => {
+const handleScreenSize = () => {
+  editorContainer.style.width = `${editorContainerSize}px`;
+  editorContainer.style.height = `${editorContainerSize}px`;
   canvas.width = canvasSize;
   canvas.height = canvasSize;
+  canvas.style.transform = `scale(${editorContainerSize / canvasSize})`;
   frameLoaded = true;
   drawImage();
+};
+
+frame.onload = () => {
+  handleScreenSize();
 };
 
 upload.addEventListener("change", (event) => {
@@ -70,7 +81,7 @@ function drawImage() {
     scaledHeight
   );
   ctx.restore();
-  ctx.drawImage(frame, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(frame, 0, 0, canvasSize, canvasSize);
 }
 
 [zoom, rotate].forEach((control) => {
@@ -128,3 +139,18 @@ download.addEventListener("click", () => {
   link.download = "edited-image.jpeg";
   link.click();
 });
+
+const handleResize = () => {
+  const x = window.matchMedia("(max-width: 500px)");
+  if (x.matches) {
+    editorContainerSize = 200;
+    canvasSize = 1000;
+    handleScreenSize();
+  } else {
+    editorContainerSize = defaultEditorContainerSize;
+    canvasSize = defaultCanvasSize;
+    handleScreenSize();
+  }
+};
+handleResize();
+window.addEventListener("resize", handleResize);
