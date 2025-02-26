@@ -70,8 +70,8 @@ function drawImage() {
   ctx.rotate((rotate.value * Math.PI) / 180);
 
   const scale = zoom.value;
-  let scaledWidth = 500 * scale;
-  let scaledHeight = 500 * scale;
+  let scaledWidth = img.width * scale;
+  let scaledHeight = img.height * scale;
 
   ctx.drawImage(
     img,
@@ -143,7 +143,7 @@ download.addEventListener("click", () => {
 const handleResize = () => {
   const x = window.matchMedia("(max-width: 500px)");
   if (x.matches) {
-    editorContainerSize = 400;
+    editorContainerSize = 350;
     handleScreenSize();
   } else {
     editorContainerSize = defaultEditorContainerSize;
