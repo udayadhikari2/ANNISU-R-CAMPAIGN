@@ -19,9 +19,8 @@ const upload = document.getElementById("upload");
   frame.src = "frame_2.png";
 
   frame.onload = () => {
-    canvas.width =400;
-    alert(frame.width/5)
-    canvas.height = 400;
+    canvas.width =500;
+    canvas.height = 500;
     frameLoaded = true;
     drawImage();
   };
