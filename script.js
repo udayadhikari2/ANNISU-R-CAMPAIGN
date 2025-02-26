@@ -17,6 +17,7 @@ const upload = document.getElementById("upload");
   let imageLoaded = false;
   ctx.imageSmoothingEnabled = false;
   frame.src = "frame_2.png";
+  img.src="upload-icon.png";
 
   frame.onload = () => {
     canvas.width =500;
@@ -42,7 +43,8 @@ const upload = document.getElementById("upload");
     uploadButton.style.top = "100px";
     uploadButton.style.left = "10px"; // Keep at top-left
     uploadButton.style.transform = "none";
-    uploadButton.querySelector("h6").innerHTML = "Replace";
+    uploadButton.style.background = "rgba(11, 204, 27, 0.7)";
+    uploadButton.querySelector("h6").style.display = "none";
     imgX = 0;
     imgY = 0;
     zoom.value = 1;
