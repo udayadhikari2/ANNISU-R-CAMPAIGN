@@ -13,6 +13,7 @@ body {
     position: relative;
     width: 500px;
     height: 500px;
+    /* scale:; */
     border: 2px solid #fff;
     overflow: hidden;
     /* background-image: url("frame.png"); */

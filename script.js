@@ -19,8 +19,9 @@ const upload = document.getElementById("upload");
   frame.src = "frame_2.png";
 
   frame.onload = () => {
-    canvas.width = frame.width; // Use natural dimensions
-    canvas.height = frame.height;
+    canvas.width =400;
+    alert(frame.width/5)
+    canvas.height = 400;
     frameLoaded = true;
     drawImage();
   };
@@ -59,8 +60,8 @@ const upload = document.getElementById("upload");
     ctx.rotate((rotate.value * Math.PI) / 180);
 
     const scale = zoom.value;
-    let scaledWidth = 400 * scale;
-    let scaledHeight = 400 * scale;
+    let scaledWidth = 200 * scale;
+    let scaledHeight =200* scale;
 
     ctx.drawImage(
       img,
